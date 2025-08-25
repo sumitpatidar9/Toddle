@@ -8,7 +8,7 @@
 		"dev": "nodemon src/app.js",
 		"start:verbose": "LOG_LEVEL=verbose node src/app.js",
 		"start:critical": "LOG_LEVEL=critical node src/app.js",
-		"setup:db": "node scripts/setup-database.js"
+		"setup-db": "node scripts/setup-database.js"
 	},
 	"keywords": [
 		"social-media",
