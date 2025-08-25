@@ -2,13 +2,21 @@ const { Pool } = require("pg");
 require("dotenv").config();
 
 const setupDatabase = async () => {
+	// const pool = new Pool({
+	// 	host: process.env.DB_HOST,
+	// 	port: process.env.DB_PORT,
+	// 	database: process.env.DB_NAME,
+	// 	user: process.env.DB_USER,
+	// 	password: process.env.DB_PASSWORD,
+	// });
+
+
 	const pool = new Pool({
-		host: process.env.DB_HOST,
-		port: process.env.DB_PORT,
-		database: process.env.DB_NAME,
-		user: process.env.DB_USER,
-		password: process.env.DB_PASSWORD,
-	});
+  connectionString: process.env.DATABASE_URL,  // use DATABASE_URL from Render
+  ssl: {
+    rejectUnauthorized: false, // required for Render PostgreSQL
+  },
+});
 
 	try {
 		console.log("Setting up database...");
