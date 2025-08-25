@@ -6,6 +6,8 @@ BEGIN
 END;
 $$ language 'plpgsql';
 
+
+
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(30) UNIQUE NOT NULL,
